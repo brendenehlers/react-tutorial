@@ -14,5 +14,43 @@ Now, the project has been stored on your local machine but is just the code that
 Once you have 'node_modules', you can run `yarn run start` to run the development version of this app.  After a few seconds, your terminal will say 'Compiled Successfully!', and a browser will pop-up and bring you to `localhost:3000`, which is just the words 'Hello, World' in the top left of the screen.  If this happens, then you know you setup the environment correctly!
 
 ### Step 2 - Basic UI setup
+This step will teach you some very basic JSX and how we can change the code in `App.jsx` to make the UI for a simple counter app.
+
+First, open the file `App.jsx`.  Notice this is not a '.js' file, instead it is a '.jsx' file.  Normal '.js' files will not allow you to use JSX syntax.    This is a very simple React functional component.  A functional component is simply a JavaScript function that returns JSX object.  Functional components can get very complicated, but that is beyond the scope of this tutorial.  Notice on line 3, there is the "Hello, World" that we see on the website.  Try changing the "Hello, World" to "Goodbye, World" and save the file.  Notice that the website automatically updates.  This makes developing much easier.
+
+Okay, now we're going to implement some basic UI to the app.  First, replace `<p>Hello, World</p>` on line 3 with `<div></div>`, then navigate to between the two tags and press return (enter on Windows).  Your App function should now look like this:
+```
+function App() {
+    return <div>
+
+    </div>
+}
+```
+Within in the div tag, add the following 3 lines:
+`<button>-</button>`
+`<span>0</span>`
+`<button>+</button>`
+such that the App function now looks like this:
+```
+function App() {
+    return <div>
+        <button>-</button>
+        <span>0</span>
+        <button>+</button>
+    </div>
+}
+```
+This is a very basic UI setup for a counter app.  If you're like me and cannot stand the elements being that close to one another, you can add `style={{display: 'flex', gap: '5px'}}` to the div tag to space the elements out a little more, but that is not required.  The resulting App function will look like this:
+```
+function App() {
+    return <div style={{display: 'flex', gap: '5px'}}>
+        <button>-</button>
+        <span>0</span>
+        <button>+</button>
+    </div>
+}
+```
+And that's the basic setup! We will add the functionality to the button in the next step using functions and hooks!
+
 ### Step 3 - Adding functionality
 ### Step 4 - Making a Counter component
