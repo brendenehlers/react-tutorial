@@ -1,9 +1,20 @@
+import { useState } from 'react'
 
 function App() {
+    const [count, setCount] = useState(0)
+
+    function increment() {
+        setCount(count+1)
+    }
+
+    function decrement() {
+        setCount(count-1)
+    }
+
     return <div style={{display: 'flex', gap: '5px'}}>
-        <button>-</button>
-        <span>0</span>
-        <button>+</button>
+        <button onClick={decrement}>-</button>
+        <span>{count}</span>
+        <button onClick={increment}>+</button>
     </div>
 }
 
